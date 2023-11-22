@@ -1,0 +1,133 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=windows-1251"> 
+  <title>Coverage Report > CompareListsOfNumbers</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">task1</a>
+</div>
+
+<h1>Coverage Summary for Class: CompareListsOfNumbers (task1)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">CompareListsOfNumbers</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (4/4)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    90%
+  </span>
+  <span class="absValue">
+    (9/10)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package task1;
+&nbsp;
+&nbsp;import java.util.List;
+&nbsp;import java.util.NoSuchElementException;
+&nbsp;
+<b class="fc">&nbsp;public class CompareListsOfNumbers {</b>
+&nbsp;
+&nbsp;    public Double findAverageValue(List&lt;Integer&gt; integerList) {
+<b class="fc">&nbsp;        if (integerList == null || integerList.isEmpty()) {</b>
+<b class="fc">&nbsp;            throw new IllegalStateException(&quot;List is null or empty&quot;);</b>
+&nbsp;        } else {
+<b class="fc">&nbsp;            return integerList.stream().mapToInt(e -&gt; e).average().getAsDouble();</b>
+&nbsp;        }
+&nbsp;    }
+&nbsp;
+&nbsp;    public String compareTwoListsOfInteger(List&lt;Integer&gt; integerList1, List&lt;Integer&gt; integerList2) {
+<b class="fc">&nbsp;        return switch (Double.compare(findAverageValue(integerList1), findAverageValue(integerList2))) {</b>
+<b class="fc">&nbsp;            case 0 -&gt; &quot;Средние значения списков равны&quot;;</b>
+<b class="fc">&nbsp;            case -1 -&gt; &quot;Второй список имеет большее среднее значение&quot;;</b>
+<b class="fc">&nbsp;            case 1 -&gt; &quot;Первый список имеет большее среднее значение&quot;;</b>
+<b class="nc">&nbsp;            default -&gt; throw new IllegalStateException(&quot;One of the Lists is incorrect&quot;);</b>
+&nbsp;        };
+&nbsp;    }
+&nbsp;
+&nbsp;    public void PrintResults(String string) {
+<b class="fc">&nbsp;        System.out.println(string);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2023-11-21 23:50</div>
+</div>
+</body>
+</html>
